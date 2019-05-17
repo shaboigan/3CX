@@ -18,7 +18,7 @@ echo -e "${Colour}\n\nTeamviewer will be installed now.\n\n${less}"
 sudo dpkg -i teamviewer.deb; sudo apt-get install -f -y
 
 echo -e "${Colour}\nSet the Teamviewer password\n${less}"
-read -p "Please enter the desired password for Teamviewer: " password
+read -p "Please enter the desired password for Teamviewer (12 Characters or less): " password
 sudo teamviewer passwd $password
 
 echo -e "${Colour}\n\nThe 3CX SBC (Session Border Controller) is downloading now.\n\n${less}"
