@@ -6,7 +6,7 @@ less='\033[0m'
 echo -e "${Colour}By using this script, you'll remove the default pi account, update the system, install Teamviewer and install the 3CX SBC (Session Border Controller).\nUse CTRL+C to cancel the script\n\n${less}"
 
 echo -e "${Colour}\nRemoving the default pi account and the associated home directory\n${less}"
-sudo pkill -u pi && sudo deluser pi
+sudo deluser pi
 
 echo -e "${Colour}\n\nThe system will now upgrade all the software and firmware, as well as clean up old/unused packages.\n\n${less}"
 sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get autoremove && sudo apt-get autoclean
