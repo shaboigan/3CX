@@ -18,10 +18,12 @@ echo -e "${Colour}\n\nTeamviewer will be installed now.\n\n${less}"
 sudo dpkg -i teamviewer.deb; sudo apt-get install -f -y
 
 if [[ -z "$1" ]] ; then
+echo -e "${Colour}\nConnect Teamviewer to account\n${less}"
+sudo teamviewer setup
+else
 echo -e "${Colour}\nSet the Teamviewer password\n${less}"
 read -p "Please enter the desired password for Teamviewer (12 Characters or less): " password
 sudo teamviewer passwd $password
-else
 echo -e "${Colour}\nYou will need to manually connect Teamviewer to an account, until TV resolve the error with automatic connection\n${less}"
 read -p "Press enter to acknowledge and continue"
 fi
