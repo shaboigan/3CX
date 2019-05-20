@@ -23,7 +23,7 @@ read -p "Please enter the desired password for Teamviewer (12 Characters or less
 sudo teamviewer passwd $password
 else
 echo -e "${Colour}\nYou will need to manually connect Teamviewer to an account, until TV resolve the error with automatic connection\n${less}"
-read -p "${Colour}Press enter to acknowledge and continue${less}"
+read -p "Press enter to acknowledge and continue"
 fi
 
 echo -e "${Colour}\n\nThe 3CX SBC (Session Border Controller) is downloading now.\n\n${less}"

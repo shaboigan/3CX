@@ -23,5 +23,5 @@ sudo sed -i "s/autologin-user=pi/autologin-user=$username/g" /etc/lightdm/lightd
 
 echo -e "${Colour}Script will now reboot.${less}"
 echo -e "${Colour}Restart the putty session and login with the newly created account${less}"
-read -p "${Colour}Press enter to acknowledge and continue${less}"
+read -p "Press enter to acknowledge and continue"
 sudo reboot
