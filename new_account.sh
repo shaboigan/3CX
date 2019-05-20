@@ -7,7 +7,7 @@ sudo touch file && sudo rm file
 echo -e "${Colour}By using this script, you'll create a new user account. Use CTRL+C to cancel the script${less}"
 
 echo -e "${Colour}Set the Account Username${less}"
-read -p "Please enter the desired Username, or press enter to use it3support" username
+read -p "Please enter the desired Username, or press enter to use it3support: " username
 
 if [[ -z "$username" ]]; then
 	username='it3support'
