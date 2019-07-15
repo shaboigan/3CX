@@ -19,7 +19,7 @@ echo -e "${Colour}Set the Account Password${less}"
 sudo passwd $username
 
 echo -e "${Colour}Removing pi account from autologin ready for removal${less}"
-sudo sed -i "s/autologin-user=pi/autologin-user=$username/g" /etc/lightdm/lightdm.conf && sudo sed -i "s/--autologin pi/--autologin $username/g" /etc/systemd/system/autologin@.service
+sudo sed -i "s/autologin-user=pi/autologin-user=$username/g" /etc/lightdm/lightdm.conf && sudo sed -i "s/--autologin pi/--autologin $username/g" /etc/systemd/system/autologin@.service && sudo passwd --lock pi
 
 echo -e "${Colour}Script will now reboot.${less}"
 echo -e "${Colour}Restart the putty session and login with the newly created account${less}"
