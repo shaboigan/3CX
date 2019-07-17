@@ -6,6 +6,13 @@ less='\033[0m'
 sudo touch file && sudo rm file
 echo -e "${Colour}By using this script, you'll create a new user account. Use CTRL+C to cancel the script${less}"
 
+echo -e "${Colour}Set the hostname to the site the pi will be deployed to${less}"
+read -p "Please enter the name of the site this pi will be deployed to, or press enter to use defaults: " hostname
+
+if [[ -z "$hostname" ]]; then
+	hostname='raspberrypi'
+fi
+
 echo -e "${Colour}Set the Account Username${less}"
 read -p "Please enter the desired Username, or press enter to use it3support: " username
 
@@ -20,6 +27,9 @@ sudo passwd $username
 
 echo -e "${Colour}Removing pi account from autologin ready for removal${less}"
 sudo sed -i "s/autologin-user=pi/autologin-user=$username/g" /etc/lightdm/lightdm.conf && sudo sed -i "s/--autologin pi/--autologin $username/g" /etc/systemd/system/autologin@.service && sudo passwd --lock pi
+
+echo -e "${Colour}Settings the hostname on the pi${less}"
+sudo sed -i "s/raspberrypi/$hostname/g" /etc/hostname && sudo sed -i "s/raspberrypi/$hostname/g" /etc/hosts
 
 echo -e "${Colour}Script will now reboot.${less}"
 echo -e "${Colour}Restart the putty session and login with the newly created account${less}"
