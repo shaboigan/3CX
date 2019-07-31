@@ -30,7 +30,7 @@ read -p "Press enter to acknowledge and continue"
 fi
 
 echo -e "${Colour}\n\nThe 3CX SBC (Session Border Controller) is downloading now.\n\n${less}"
-wget http://downloads.3cx.com/downloads/sbc/3cxsbc.zip -O 3cxsbc.zip
+wget http://downloads.3cx.com/downloads/sbc/3cxsbcV15.zip -O 3cxsbc.zip
 
 echo -e "${Colour}\n\nThe 3CX SBC (Session Border Controller) will be installed now.\n\n${less}"
 sudo bash 3cxsbc.zip

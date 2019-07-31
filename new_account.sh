@@ -28,8 +28,8 @@ sudo passwd $username
 echo -e "${Colour}Removing pi account from autologin ready for removal${less}"
 sudo sed -i "s/autologin-user=pi/autologin-user=$username/g" /etc/lightdm/lightdm.conf && sudo sed -i "s/--autologin pi/--autologin $username/g" /etc/systemd/system/autologin@.service && sudo passwd --lock pi
 
-echo -e "${Colour}Settings the hostname on the pi${less}"
-sudo sed -i "s/raspberrypi/$hostname/g" /etc/hostname && sudo sed -i "s/raspberrypi/$hostname/g" /etc/hosts
+echo -e "${Colour}Setting the hostname on the pi${less}"
+sudo sed -i "s/raspberrypi/$hostname_sbc/g" /etc/hostname && sudo sed -i "s/raspberrypi/$hostname/g" /etc/hosts
 
 echo -e "${Colour}Script will now reboot.${less}"
 echo -e "${Colour}Restart the putty session and login with the newly created account${less}"
